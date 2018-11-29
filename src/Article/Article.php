@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelDay\Article;
 
-
-final class Article{
+final class Article
+{
     /**
      * @var int
      */
@@ -21,17 +23,16 @@ final class Article{
      */
     private $creationDate;
 
-
     /**
      * Article constructor.
-     * @param int $id
-     * @param string $title
-     * @param string $body
+     *
+     * @param int       $id
+     * @param string    $title
+     * @param string    $body
      * @param \DateTime $creationDate
      */
-    public function __construct(int $id, string $title, string $body, \DateTime $creationDate)
+    public function __construct(int $id, string $title, string $body, \DateTimeImmutable $creationDate)
     {
-
         $this->id = $id;
         $this->title = $title;
         $this->body = $body;
@@ -46,8 +47,6 @@ final class Article{
         return $this->id;
     }
 
-  
-
     /**
      * @return string
      */
@@ -55,7 +54,6 @@ final class Article{
     {
         return $this->title;
     }
-
 
     /**
      * @return string
@@ -65,14 +63,11 @@ final class Article{
         return $this->body;
     }
 
-
     /**
      * @return \DateTime
      */
-    public function getCreationDate(): \DateTime
+    public function getCreationDate(): \DateTimeImmutable
     {
         return $this->creationDate;
     }
-
-
 }
